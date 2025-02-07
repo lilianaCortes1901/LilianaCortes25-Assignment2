@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 //would not implement using ArrayList - initially thought I could, but it would
-//be assuming all sorting algorithms are implemented using ArrayList which is not the case. 
+//be assuming all sorting algorithms are implemented using ArrayList which is not the case.
 
 public class BubbleSort implements SortingInterface{
+
     @Override
     public int[] sorty(int[]  input) {
         int n = input.length;
