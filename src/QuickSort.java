@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 
 public class QuickSort implements SortingInterface{
-    @Override
-    public void format(ArrayList<Integer> userInput) {
 
+    @Override
+    public int[] sorty(int[] input) {
+
+        return new int[0];
     }
 }

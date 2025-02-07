@@ -3,5 +3,6 @@
 import java.util.ArrayList;
 
 public interface SortingInterface {
-    public void format(ArrayList<Integer> input);
+    public int[] sorty(int[] input);
+
 }
