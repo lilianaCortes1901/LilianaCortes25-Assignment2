@@ -10,6 +10,11 @@ public class Main {
         QuickSort quickSort = new QuickSort();
         MergeSort mergeSort = new MergeSort();
 
+        System.out.println("Sorted Array: ");
+        for(int i = 0; i < input.length; i++){
+            System.out.println(input[i] + " ");
+        }
+
 
     }
 }
