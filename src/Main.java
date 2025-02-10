@@ -15,6 +15,8 @@ public class Main {
             System.out.println(input[i] + " ");
         }
 
+        //create separate print statements for each algorithm or add it as conditionals
+
 
     }
 }
