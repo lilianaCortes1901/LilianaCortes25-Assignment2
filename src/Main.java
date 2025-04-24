@@ -1,4 +1,14 @@
+import java.util.Arrays;
+
 public class Main {
+
+    private static void printSortedArray(int[] sortedArray){
+        for(int i = 0; i < sortedArray.length; i++){
+            System.out.println(i + " ");
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
 
         int[] input = {35, -12, 24, 19, 97, 43, 0, 9, -3};
@@ -10,13 +20,30 @@ public class Main {
         QuickSort quickSort = new QuickSort();
         MergeSort mergeSort = new MergeSort();
 
-        System.out.println("Sorted Array: ");
-        for(int i = 0; i < input.length; i++){
-            System.out.println(input[i] + " ");
-        }
+        System.out.println("Initial Array: " + Arrays.toString(input));
 
-        //create separate print statements for each algorithm or add it as conditionals
+        int[] bubbleSorted = bubbleSort.sorty(input);
+        System.out.println("Bubble Sort Result: ");
+        printSortedArray(bubbleSorted);
 
+        int[] insertSorted = insertionSort.sorty(input);
+        System.out.println("Insert Sort Result: ");
+        printSortedArray(insertSorted);
 
+        int[] selectionSorted = selectionSort.sorty(input);
+        System.out.println("Selection Sort Result: ");
+        printSortedArray(selectionSorted);
+
+        int[] shellSorted = shellSort.sorty(input);
+        System.out.println("Shell Sort Result: ");
+        printSortedArray(shellSorted);
+
+        int[] quickSorted = quickSort.sorty(input);
+        System.out.println("Quick Sort Result: ");
+        printSortedArray(quickSorted);
+
+        int[] mergeSorted = mergeSort.sorty(input);
+        System.out.println("Merge Sort Result: ");
+        printSortedArray(mergeSorted);
     }
 }
