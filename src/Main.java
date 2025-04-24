@@ -46,29 +46,5 @@ public class Main {
         System.out.println("Merge Sort Result: ");
         printSortedArray(mergeSorted);
 
-        //Tester.java
-        SortingInterface bubbleSortTest = new BubbleSort();
-        Tester testerBubbleSort = new Tester(bubbleSort);
-        testerBubbleSort.test(5,1000);
-
-        SortingInterface insertSortTest = new InsertionSort();
-        Tester testerInsertSort = new Tester(insertionSort);
-        testerInsertSort.test(5,1000);
-
-        SortingInterface selectedSortTest = new SelectionSort();
-        Tester testerSelectSort = new Tester(selectionSort);
-        testerSelectSort.test(5,1000);
-
-        SortingInterface shellSortTest = new ShellSort();
-        Tester testerShellSort = new Tester(shellSort);
-        testerShellSort.test(5,1000);
-
-        SortingInterface quickSortTest = new QuickSort();
-        Tester testerQuickSort = new Tester(quickSort);
-        testerQuickSort.test(5,1000);
-
-        SortingInterface mergeSortTest = new MergeSort();
-        Tester testerMergeSort = new Tester(mergeSort);
-        testerMergeSort.test(5,1000);
     }
 }
