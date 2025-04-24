@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] input = {35, -12, 24, 19, 97, 43, 0, 9, -3};
+        int[] input = {2, 5, 8, 4, 1, 3,7,6};
         //Create objects
         BubbleSort bubbleSort = new BubbleSort();
         InsertionSort insertionSort = new InsertionSort();
