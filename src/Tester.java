@@ -7,10 +7,10 @@ public class Tester {
         this.sortingInterface = sa;
     }
 
-    double singleTest(int size){
-        int[] arrayInput = new int[size];
+    double singleTest(int[] size){
+        int[] arrayInput = new int[size.length];
         Random random = new Random();
-        for(int i = 0; i < size; i++){
+        for(int i = 0; i < size.length; i++){
             arrayInput[i] = random.nextInt(10000);
         }
         //Records Start time for run
@@ -27,7 +27,7 @@ public class Tester {
         return totalTime;
     }
 
-    public void test(int iterations, int size){
+    public void test(int iterations, int[] size){
         double totalTime = 0;
         for(int i = 0; i < iterations; i++){
             totalTime += singleTest(size);

@@ -1,84 +1,47 @@
+import javax.imageio.IIOException;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Performance {
     public static void main(String[] args){
-        BubbleSort bubbleSort = new BubbleSort();
-        InsertionSort insertionSort = new InsertionSort();
-        SelectionSort selectionSort = new SelectionSort();
-        ShellSort shellSort = new ShellSort();
-        QuickSort quickSort = new QuickSort();
-        MergeSort mergeSort = new MergeSort();
+        int[] performSizes = {100, 500, 1000, 2000, 5000, 10000, 20000, 75000, 150000};
+        int performIterations = 20;
 
-        //Tester.java
-        SortingInterface bubbleSortTest = new BubbleSort();
-        Tester testerBubbleSort = new Tester(bubbleSort);
-        testerBubbleSort.test(20,100);
-        testerBubbleSort.test(20,500);
-        testerBubbleSort.test(20,1000);
-        testerBubbleSort.test(20,2000);
-        testerBubbleSort.test(20,5000);
-        testerBubbleSort.test(20,10000);
-        testerBubbleSort.test(20,20000);
-        testerBubbleSort.test(20,75000);
-        testerBubbleSort.test(20,150000);
+        //Call the algorithms
+        SortingInterface[] performSorting = {
+                new QuickSort(), new MergeSort(), new InsertionSort(), new ShellSort(),
+                new SelectionSort(), new BubbleSort()
+        };
 
-        SortingInterface insertSortTest = new InsertionSort();
-        Tester testerInsertSort = new Tester(insertionSort);
-        testerInsertSort.test(20,100);
-        testerInsertSort.test(20,500);
-        testerInsertSort.test(20,1000);
-        testerInsertSort.test(20,2000);
-        testerInsertSort.test(20,5000);
-        testerInsertSort.test(20,10000);
-        testerInsertSort.test(20,20000);
-        testerInsertSort.test(20,75000);
-        testerInsertSort.test(20,150000);
+        String[] sortingNames = {
+                "Quick Sort", "Merge Sort", "Insertion Sort", "Shell Sort",
+                "Selection Sort", "Bubble Sort"
+        };
 
-        SortingInterface selectedSortTest = new SelectionSort();
-        Tester testerSelectSort = new Tester(selectionSort);
-        testerSelectSort.test(20,100);
-        testerSelectSort.test(20,500);
-        testerSelectSort.test(20,1000);
-        testerSelectSort.test(20,2000);
-        testerSelectSort.test(20,5000);
-        testerSelectSort.test(20,10000);
-        testerSelectSort.test(20,20000);
-        testerSelectSort.test(20,75000);
-        testerSelectSort.test(20,150000);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("sortingAlgorithm_report.txt"))){
+            writer.write("Sorting Algorithm Performance Report");
+            writer.write("Tested over " + performIterations + "iterations.");
 
-        SortingInterface shellSortTest = new ShellSort();
-        Tester testerShellSort = new Tester(shellSort);
-        testerShellSort.test(20,100);
-        testerShellSort.test(20,500);
-        testerShellSort.test(20,1000);
-        testerShellSort.test(20,2000);
-        testerShellSort.test(20,5000);
-        testerShellSort.test(20,10000);
-        testerShellSort.test(20,20000);
-        testerShellSort.test(20,75000);
-        testerShellSort.test(20,150000);
+            for(int i = 0; i < performSorting.length; i++){
+                Tester tester = new Tester(performSorting[i]);
+                writer.write("Current Algorithm " + sortingNames[i] + ": ");
+                    for(int j = 0; j < performSizes.length; j++){
+                        double total = 0;
+                        for(int k = 0; k < performIterations; k++){
+                            total += tester.singleTest(performSizes);
+                        }
+                        double average = total/performIterations;
+                        String results = "Array size " + performSizes + ": " + String.format("%.3f", average) + "ms";
+                        writer.write(results + " ");
+                        System.out.println(results);
+                    }
+                writer.write("");
+            }
+            System.out.println("Report Created");
+        } catch (IOException e){
+            System.err.println("Error creating report: " + e.getMessage());
+        }
 
-        SortingInterface quickSortTest = new QuickSort();
-        Tester testerQuickSort = new Tester(quickSort);
-        testerQuickSort.test(20,100);
-        testerQuickSort.test(20,500);
-        testerQuickSort.test(20,1000);
-        testerQuickSort.test(20,2000);
-        testerQuickSort.test(20,5000);
-        testerQuickSort.test(20,10000);
-        testerQuickSort.test(20,20000);
-        testerQuickSort.test(20,75000);
-        testerQuickSort.test(20,150000);
-
-        SortingInterface mergeSortTest = new MergeSort();
-        Tester testerMergeSort = new Tester(mergeSort);
-        testerMergeSort.test(20,100);
-        testerMergeSort.test(20,500);
-        testerMergeSort.test(20,1000);
-        testerMergeSort.test(20,2000);
-        testerMergeSort.test(20,5000);
-        testerMergeSort.test(20,10000);
-        testerMergeSort.test(20,20000);
-        testerMergeSort.test(20,75000);
-        testerMergeSort.test(20,150000);
     }
 }
