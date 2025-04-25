@@ -20,22 +20,22 @@ public class Performance {
         };
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("sortingAlgorithm_report.txt"))){
-            writer.write("Sorting Algorithm Performance Report");
-            writer.write("Tested over " + performIterations + "iterations.");
+            writer.write("Sorting Algorithm Performance Report\n");
+            writer.write("Tested over " + performIterations + "iterations.\n\n");
 
             for(int i = 0; i < performSorting.length; i++){
                 Tester tester = new Tester(performSorting[i]);
-                writer.write("Current Algorithm " + sortingNames[i] + ": ");
-                    for(int j = 0; j < performSizes.length; j++){
-                        double total = 0;
-                        for(int k = 0; k < performIterations; k++){
-                            total += tester.singleTest(performSizes);
-                        }
-                        double average = total/performIterations;
-                        String results = "Array size " + performSizes + ": " + String.format("%.3f", average) + "ms";
-                        writer.write(results + " ");
-                        System.out.println(results);
+                writer.write("\nCurrent Algorithm: " + sortingNames[i] + "\n");
+                for (int performSize : performSizes) {
+                    double total = 0;
+                    for (int k = 0; k < performIterations; k++) {
+                        total += tester.singleTest(performSizes);
                     }
+                    double average = total / performIterations;
+                    String results = "Array size " + performSizes + ": " + String.format("%.3f", average) + "ms";
+                    writer.write(results + "\n");
+                    System.out.println(results);
+                }
                 writer.write("");
             }
             System.out.println("Report Created");
