@@ -24,18 +24,24 @@ public class Performance {
 
             for(int i = 0; i < performSorting.length; i++){
                 Tester tester = new Tester(performSorting[i]);
-                writer.write("\nCurrent Algorithm: " + sortingNames[i] + "\n");
+
+                String algorithmName = sortingNames[i];
+                writer.write("Sorting algorithm - " + algorithmName + "\n");
+                System.out.println("Sorting algorithm - " + algorithmName);
+
                 for (int performSize : performSizes) {
                     double total = 0;
                     for (int k = 0; k < performIterations; k++) {
                         total += tester.singleTest(performSize);
                     }
                     double average = total / performIterations;
-                    String results = "Array size " + performSize + ": " + String.format("%.3f", average) + "ms";
+                    String results = "Sorted " + performSize + " elements in " + String.format("%.3f", average) + "ms (avg)";
+
                     writer.write(results + "\n");
                     System.out.println(results);
                 }
-                writer.write("");
+                writer.write("\n");
+                System.out.println("\n");
             }
             System.out.println("Report Created");
         } catch (IOException e){

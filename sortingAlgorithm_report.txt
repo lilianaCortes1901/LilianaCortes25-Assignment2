@@ -1,0 +1,69 @@
+Sorting Algorithm Performance Report
+Tested over 20iterations.
+
+Sorting algorithm - Quick Sort
+Sorted 100 elements in 0.028ms (avg)
+Sorted 500 elements in 0.034ms (avg)
+Sorted 1000 elements in 0.092ms (avg)
+Sorted 2000 elements in 0.122ms (avg)
+Sorted 5000 elements in 0.320ms (avg)
+Sorted 10000 elements in 0.683ms (avg)
+Sorted 20000 elements in 1.454ms (avg)
+Sorted 75000 elements in 6.549ms (avg)
+Sorted 150000 elements in 11.181ms (avg)
+
+Sorting algorithm - Merge Sort
+Sorted 100 elements in 0.046ms (avg)
+Sorted 500 elements in 0.056ms (avg)
+Sorted 1000 elements in 0.107ms (avg)
+Sorted 2000 elements in 0.279ms (avg)
+Sorted 5000 elements in 0.784ms (avg)
+Sorted 10000 elements in 1.311ms (avg)
+Sorted 20000 elements in 2.272ms (avg)
+Sorted 75000 elements in 8.381ms (avg)
+Sorted 150000 elements in 17.464ms (avg)
+
+Sorting algorithm - Insertion Sort
+Sorted 100 elements in 0.007ms (avg)
+Sorted 500 elements in 0.017ms (avg)
+Sorted 1000 elements in 0.031ms (avg)
+Sorted 2000 elements in 0.035ms (avg)
+Sorted 5000 elements in 0.033ms (avg)
+Sorted 10000 elements in 0.067ms (avg)
+Sorted 20000 elements in 0.116ms (avg)
+Sorted 75000 elements in 0.242ms (avg)
+Sorted 150000 elements in 0.503ms (avg)
+
+Sorting algorithm - Shell Sort
+Sorted 100 elements in 0.021ms (avg)
+Sorted 500 elements in 0.099ms (avg)
+Sorted 1000 elements in 0.092ms (avg)
+Sorted 2000 elements in 0.159ms (avg)
+Sorted 5000 elements in 0.339ms (avg)
+Sorted 10000 elements in 0.739ms (avg)
+Sorted 20000 elements in 1.650ms (avg)
+Sorted 75000 elements in 7.185ms (avg)
+Sorted 150000 elements in 15.587ms (avg)
+
+Sorting algorithm - Selection Sort
+Sorted 100 elements in 0.110ms (avg)
+Sorted 500 elements in 0.180ms (avg)
+Sorted 1000 elements in 0.324ms (avg)
+Sorted 2000 elements in 1.223ms (avg)
+Sorted 5000 elements in 7.852ms (avg)
+Sorted 10000 elements in 29.780ms (avg)
+Sorted 20000 elements in 119.031ms (avg)
+Sorted 75000 elements in 1763.552ms (avg)
+Sorted 150000 elements in 6980.088ms (avg)
+
+Sorting algorithm - Bubble Sort
+Sorted 100 elements in 0.105ms (avg)
+Sorted 500 elements in 0.280ms (avg)
+Sorted 1000 elements in 0.706ms (avg)
+Sorted 2000 elements in 2.896ms (avg)
+Sorted 5000 elements in 18.939ms (avg)
+Sorted 10000 elements in 89.612ms (avg)
+Sorted 20000 elements in 397.238ms (avg)
+Sorted 75000 elements in 6204.830ms (avg)
+Sorted 150000 elements in 25578.186ms (avg)
+
