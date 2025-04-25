@@ -1,4 +1,3 @@
-import javax.imageio.IIOException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -29,10 +28,10 @@ public class Performance {
                 for (int performSize : performSizes) {
                     double total = 0;
                     for (int k = 0; k < performIterations; k++) {
-                        total += tester.singleTest(performSizes);
+                        total += tester.singleTest(performSize);
                     }
                     double average = total / performIterations;
-                    String results = "Array size " + performSizes + ": " + String.format("%.3f", average) + "ms";
+                    String results = "Array size " + performSize + ": " + String.format("%.3f", average) + "ms";
                     writer.write(results + "\n");
                     System.out.println(results);
                 }
